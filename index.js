@@ -67,7 +67,7 @@ async function crawl(URL, level) {
         crawl(newUrls[2], level),
       ]).then((promises) => {
         const children = promises[0];
-        const children1 = promises[2];
+        const children1 = promises[1];
         const children2 = promises[2];
 
         let tmp = [
