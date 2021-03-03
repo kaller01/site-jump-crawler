@@ -32,11 +32,11 @@ function explore(URL, tries) {
         .catch(async (error) => {
           // console.log(error);
           tries++;
-          const newUrls = await explore(URL,tries);
+          const newUrls = await explore(URL, tries);
           resolve(newUrls);
         });
     } else {
-      resolve(["No links found"])
+      resolve(["No links found"]);
     }
   });
 }
@@ -61,25 +61,31 @@ async function crawl(URL, level) {
     if (level == 3) {
       resolve(newUrls);
     } else {
-      const children = await crawl(newUrls[0], level);
-      const children1 = await crawl(newUrls[1], level);
-      const children2 = await crawl(newUrls[2], level);
+      Promise.all([
+        crawl(newUrls[0], level),
+        crawl(newUrls[1], level),
+        crawl(newUrls[2], level),
+      ]).then((promises) => {
+        const children = promises[0];
+        const children1 = promises[2];
+        const children2 = promises[2];
 
-      let tmp = [
-        {
-          URL: newUrls[0],
-          children,
-        },
-        {
-          URL: newUrls[1],
-          children: children1,
-        },
-        {
-          URL: newUrls[2],
-          children: children2,
-        },
-      ];
-      resolve(tmp);
+        let tmp = [
+          {
+            URL: newUrls[0],
+            children,
+          },
+          {
+            URL: newUrls[1],
+            children: children1,
+          },
+          {
+            URL: newUrls[2],
+            children: children2,
+          },
+        ];
+        resolve(tmp);
+      });
     }
   });
 }
@@ -87,7 +93,7 @@ async function crawl(URL, level) {
 function getBaseURL(URL) {
   if (!URL) return "No url found";
   let orgUrl = URL.split("/");
-  return ((orgUrl[0] + "//" + orgUrl[2]).split("?")[0]).split("#")[0];
+  return (orgUrl[0] + "//" + orgUrl[2]).split("?")[0].split("#")[0];
 }
 
 function getUnvisitedURL(hrefs) {
