@@ -4,7 +4,8 @@
 Visit one website and pick 3 urls from it and visit those. It then does this recursively until it reaches a level of 4. At the end it provides a tree structure in json format.
 
 ## Output
-```{
+```
+{
     "URL": "https://sv.wikipedia.org/wiki/Stockholms_historiska_krogar,_v%C3%A4rdshus_och_restauranger",
     "children": [
         {
@@ -21,8 +22,8 @@ Visit one website and pick 3 urls from it and visit those. It then does this rec
                 {
                     "URL": "https://commons.wikimedia.org",
                     "children": [
-                        "https://foundation.wikimedia.org",
-                        "https://en.wikiquote.org",
+                        "https://en.wikipedia.org",
+                        "https://twitter.com",
                         "https://lists.wikimedia.org"
                     ]
                 },
@@ -31,7 +32,7 @@ Visit one website and pick 3 urls from it and visit those. It then does this rec
                     "children": [
                         "https://foundation.wikimedia.org",
                         "https://en.wikiquote.org",
-                        "https://lists.wikimedia.org"
+                        "https://www.facebook.com"
                     ]
                 }
             ]
@@ -40,27 +41,27 @@ Visit one website and pick 3 urls from it and visit those. It then does this rec
             "URL": "http://runeberg.org",
             "children": [
                 {
-                    "URL": "http://ogp.me",
+                    "URL": "http://www.w3.org",
                     "children": [
-                        "https://ogp.me",
-                        "https://www.scribd.com",
-                        "https://www.imdb.com"
+                        "https://www.w3.org",
+                        "https://validator.w3.org",
+                        "https://web-platform-tests.org"
                     ]
                 },
                 {
-                    "URL": "https://public.slidesharecdn.com",
+                    "URL": "http://www.lysator.liu.se",
                     "children": [
-                        "https://www.linkedin.com",
-                        "https://pinterest.com",
-                        "http://blog.slideshare.net"
+                        "https://jskom.lysator.liu.se",
+                        "https://datorhandbok.lysator.liu.se",
+                        "http://www.runeberg.org"
                     ]
                 },
                 {
-                    "URL": "https://es.slideshare.net",
+                    "URL": "http://www.liu.se",
                     "children": [
-                        "https://www.linkedin.com",
-                        "https://pinterest.com",
-                        "http://blog.slideshare.net"
+                        "https://liu.se",
+                        "https://www.googletagmanager.com",
+                        "https://connect.getflowbox.com"
                     ]
                 }
             ]
@@ -87,9 +88,9 @@ Visit one website and pick 3 urls from it and visit those. It then does this rec
                 {
                     "URL": "https://es.slideshare.net",
                     "children": [
-                        "https://www.linkedin.com",
-                        "https://pinterest.com",
-                        "http://blog.slideshare.net"
+                        "https://fr.slideshare.net",
+                        "https://de.slideshare.net",
+                        "https://pt.slideshare.net"
                     ]
                 }
             ]
