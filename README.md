@@ -1,5 +1,20 @@
 # site-jump-crawler
 
+## Setup
+You must have node.js and npm installed.
+```
+npm install
+```
+Change the url in source code for the one you want
+```
+const URL = "google.com";
+```
+Run the program, in the folder
+```
+node .
+```
+
+
 ## Functionality
 Visit one website and pick 3 urls from it and visit those. It then does this recursively until it reaches a level of 4. At the end it provides a tree structure in json format.
 
