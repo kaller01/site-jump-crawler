@@ -98,3 +98,11 @@ Visit one website and pick 3 urls from it and visit those. It then does this rec
     ]
 }
 ```
+
+## Limitations
+There are possibilities of duplicate url because of it things that HTTP and HTTPS is two different websites.  
+It selects the three first urls it finds to visit.
+
+
+ 
+
